@@ -6,7 +6,7 @@ require('dotenv').config()
 const cookie = require('cookie-parser')
 const PORT = process.env.PORT || 5000
 
-db.connect((err) => {
+db.connect((err, result) => {
     if (err) throw err;
 })
 
