@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "dd22e1d3-58b2-4b42-b9fb-9ef9166bce04",
+		"name": "Sudeep_NodejsTask Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterDoctor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.environment.set('authToken',pm.response.json().token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fName\":\"Doctor50\",\n    \"lName\":\"Lastname\",\n    \"email\":\"doctor50@gmail.com\",\n    \"password\":\"Password123\",\n    \"hospitalName\":\"Indira Gandhi Institute of Medical Sciences (IGIMS)\",\n    \"phone\":\"9988001100\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/registerDoctor",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"registerDoctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Doctor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.environment.set('authToken',pm.response.json().token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"doctor10@gmail.com\",\n    \"password\":\"Password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/loginDoctor",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"loginDoctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DoctorProfile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/Users/rex/Documents/TextFiles/pp1.jpeg"
+						},
+						{
+							"key": "name",
+							"value": "patient19",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "patient19@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Password123",
+							"type": "default"
+						},
+						{
+							"key": "address",
+							"value": "somewhere over moon!",
+							"type": "default"
+						},
+						{
+							"key": "phone",
+							"value": "9988776655",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/registerPatient",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"registerPatient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/getPatientCount",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"getPatientCount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/getAllPatients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"getAllPatients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patients By Doctor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/getPatientsByDoctor",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"getPatientsByDoctor"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
