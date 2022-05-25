@@ -4,7 +4,7 @@ const db = require('./db/db')
 const app = express()
 require('dotenv').config()
 const cookie = require('cookie-parser')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT
 
 db.connect((err, result) => {
     if (err) throw err;
