@@ -20,12 +20,12 @@ validator validating email,password strength etc.
 /api/getPatientsByDoctor (requires log in as doctor)
 /api/me (requires log in as doctor)
 
-## 
+## How to run
  - to run locally you need to navigate to the project directory and run npm run dev
  - for deploying this application i used heroku for node app and clever cloud platform for mysql database deployment as heroku asks for CC info for deploying mysql database in it :)
 
 
-##
+## Important Links
 Github repo link -> https://github.com/rex2828/Sudeep_NodejsTask
 Heroku link for the API -> https://sudeep-nodejstask.herokuapp.com/
 TEST URL in browser -> https://sudeep-nodejstask.herokuapp.com/api/getAllPatients
